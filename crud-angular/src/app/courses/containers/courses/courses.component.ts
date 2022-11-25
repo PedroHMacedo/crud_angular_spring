@@ -43,7 +43,6 @@ export class CoursesComponent {
   }
 
   onRemove(course: Course) {
-    this.refresh();
     this.coursesService.remove(course._id).subscribe(() => {
       this.snackBar.open('Curso removido com sucesso!', 'X', {
         duration: 50000,
@@ -51,5 +50,6 @@ export class CoursesComponent {
         horizontalPosition: 'center',
       });
     });
+    this.refresh();
   }
 }
